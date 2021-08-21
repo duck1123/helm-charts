@@ -48,6 +48,16 @@ spec:
               containerPort: {{ .Values.service.testnetPort }}
             - name: testnetp2pport
               containerPort: {{ .Values.service.testnetP2pPort }}
+            - name: regtest
+              containerPort: {{ .Values.service.regtestPort }}
+            - name: regtestp2pport
+              containerPort: {{ .Values.service.regtestP2pPort }}
+            - name: zmq-raw-block
+              containerPort: {{ .Values.service.zmqpubRawBlockPort }}
+            - name: zmq-raw-tx
+              containerPort: {{ .Values.service.zmqpubRawTxPort }}
+            - name: zmq-hash-block
+              containerPort: {{ .Values.service.zmqpubHashBlockPort }}
           volumeMounts:
             - name: data
               mountPath: /home/bitcoin/.bitcoin

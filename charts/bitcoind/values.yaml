@@ -12,6 +12,11 @@ service:
   p2pPort: 8333
   testnetPort: 18332
   testnetP2pPort: 18333
+  regtestPort: 18443
+  regtestP2pPort: 18444
+  zmqpubRawBlockPort: 28332
+  zmqpubRawTxPort: 28333
+  zmqpubHashBlockPort: 28334
 
 persistence:
   enabled: true

@@ -20,6 +20,16 @@ spec:
       port: {{ .Values.service.testnetPort }}
     - name: testnet-p2p
       port: {{ .Values.service.testnetP2pPort }}
+    - name: regtest
+      port: {{ .Values.service.regtestPort }}
+    - name: regtest-p2p
+      port: {{ .Values.service.regtestP2pPort }}
+    - name: zmq-raw-block
+      port: {{ .Values.service.zmqpubRawBlockPort }}
+    - name: zmq-raw-tx
+      port: {{ .Values.service.zmqpubRawTxPort }}
+    - name: zmq-hash-block
+      port: {{ .Values.service.zmqpubHashBlockPort }}
   selector:
     app: {{ template "bitcoind.name" . }}
     release: {{ .Release.Name }}
