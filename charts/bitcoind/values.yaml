@@ -3,8 +3,8 @@
 # Declare variables to be passed into your templates.
 terminationGracePeriodSeconds: 30
 image:
-  repository: arilot/docker-bitcoind
-  tag: 0.17.1
+  repository: ruimarinho/bitcoin-core
+  tag: 22
   pullPolicy: IfNotPresent
 
 service:
@@ -35,9 +35,9 @@ resources: {}
 #    cpu: 300m
 
 # Custom bitcoind configuration file used to override default bitcoind settings
+# rpcauth values: rpcuser / rpcpassword
 configurationFile:
   bitcoin.conf: |-
     server=1
     printtoconsole=1
-    rpcuser=rpcuser
-    rpcpassword=rpcpassword
+    rpcauth=rpcuser:3de4eb23a68a288cfbc857d3cf52b5c4$0b28c21a8d32d047b4da6b4b5f290951319bad3cb0985ef863c8fa4614f3c109
