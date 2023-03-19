@@ -11,7 +11,7 @@ metadata:
 spec:
   ports:
     - name: rpc
-      port: {{ .Values.internalServices.rpcPort }}
+      port: {{ .Values.internalServices.rpcExternalPort }}
       targetPort: rpc
   selector:
     app: {{ template "lnd.name" . }}
@@ -30,7 +30,7 @@ spec:
   type: LoadBalancer
   ports:
     - name: p2p
-      port: {{ .Values.externalServices.p2pPort }}
+      port: {{ .Values.externalServices.p2pExternalPort }}
       targetPort: p2p
   selector:
     app: {{ template "lnd.name" . }}
