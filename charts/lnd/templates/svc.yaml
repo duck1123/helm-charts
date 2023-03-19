@@ -10,6 +10,9 @@ metadata:
     heritage: {{ .Release.Service }}
 spec:
   ports:
+    - name: rest
+      port: {{ .Values.internalServices.restExternalPort }}
+      targetPort: rest
     - name: rpc
       port: {{ .Values.internalServices.rpcExternalPort }}
       targetPort: rpc

@@ -9,6 +9,8 @@ image:
 
 # Ports that are exposed to other pods in your cluster
 internalServices:
+  restPort: 8080
+  restExternalPort: 8080
   rpcPort: 10009
   rpcExternalPort: 10009
 

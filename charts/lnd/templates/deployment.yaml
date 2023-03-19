@@ -41,6 +41,8 @@ spec:
           resources:
   {{ toYaml .Values.resources | indent 10 }}
           ports:
+            - name: rest
+              containerPort: {{ .Values.internalServices.restPort }}
             - name: rpc
               containerPort: {{ .Values.internalServices.rpcPort }}
             - name: p2p
